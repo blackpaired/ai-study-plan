@@ -9,6 +9,7 @@ A skill for **terminal AI agents** (AI coding agents / agentic CLIs such as Clau
 - **Videos from Moodle, linked, never downloaded**: a separate login window opens, **you** log in, and the skill reads the titles, links and the **real video length** from the course page.
 - **Real numbers**: the plan uses your actual new-card counts and Anki's review forecast, so review time is planned too. Anki may stay open (the skill reads a copy of your collection).
 - **The add-on's own planning**: the plan looks exactly as if you had clicked *Create plan* in the add-on, with weak-spot round, mock exam and a light last day.
+- **On all your devices**: the add-on keeps the plan in your Anki collection too, so AnkiWeb sync brings it to your laptop.
 - **Extend instead of starting over**: add videos or decks to an existing plan; everything you already did stays ticked off. Fell behind? One command spreads the rest from today on.
 
 ## Example

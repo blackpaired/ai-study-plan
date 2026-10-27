@@ -94,7 +94,20 @@ def load(addon, pid):
         return json.load(f)
 
 
+def newest(addon, col, pid):
+    """Plan from the file or the collection – the newer one counts (it may have come from another device via sync)."""
+    path = os.path.join(plans_folder(addon), pid + ".json")
+    from_file = None
+    if os.path.isfile(path):
+        with open(path, encoding="utf-8") as f:
+            from_file = json.load(f)
+    from_col = (col.get_config("lernplan_plans", None) or {}).get(pid)
+    stamp = lambda p: -1 if p is None else float(p.get("savedAt") or 0)
+    return from_col if stamp(from_col) > stamp(from_file) else from_file
+
+
 def save(addon, plan):
+    plan["savedAt"] = time.time()  # newer than the copy in the collection -> the add-on takes it over
     folder = plans_folder(addon)
     os.makedirs(folder, exist_ok=True)
     path = os.path.join(folder, plan["id"] + ".json")
@@ -107,6 +120,7 @@ def save(addon, plan):
         json.dump(plan, f, ensure_ascii=False, indent=1)
     os.replace(tmp, path)
     print(f"Saved: {path}")
+    print("The add-on takes the plan into the collection the next time it opens or syncs (AnkiWeb sync).")
 
 
 def check(planner, plan):
@@ -243,14 +257,11 @@ def main():
             with open(args[1], encoding="utf-8") as f:
                 plan = json.load(f)
             check(planner, plan)
-            path = os.path.join(plans_folder(addon), plan["id"] + ".json")
-            old = None
-            if os.path.isfile(path):
-                with open(path, encoding="utf-8") as f:
-                    old = json.load(f)
-            plan = complete(plan, old)
+            plan = complete(plan, newest(addon, col, plan["id"]))
         elif cmd == "replan":
-            plan = load(addon, args[1])
+            plan = newest(addon, col, args[1])
+            if not plan:
+                fail(f"Plan '{args[1]}' not found.")
         else:
             fail(f"unknown command '{cmd}'.")
         schedule(planner, ankidata, col, addon, plan)

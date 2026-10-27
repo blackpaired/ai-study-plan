@@ -103,6 +103,8 @@ In a temporary folder (or next to the materials as `<Title>_Study-Plan.json`). S
 3. If it fits → `study_plan.py build <file>` (saves, creates a backup).
 4. Tell the user: reopen the Study Plan window in Anki (if it is open, close it first, otherwise editing there overwrites the new state). Videos open there with "open ↗"; Anki items are ticked off automatically, pages and videos by hand.
 
+**Other devices:** recent versions of the add-on also keep the plan in the Anki collection, so the normal AnkiWeb sync takes it to every device that has the add-on. After saving, just sync in Anki.
+
 ### 7. Later
 - **Extend** (new videos, new deck, different date): take the plan JSON from the add-on, change it, `build` again.
 - **Fell behind** (missed days): `study_plan.py replan <id>` spreads everything open from today on.

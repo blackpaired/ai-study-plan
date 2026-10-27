@@ -1,0 +1,32 @@
+{
+ "id": "anatomy-joints",
+ "title": "Anatomy: joints and muscles",
+ "subtitle": "Joints, muscles, written exam questions",
+ "exam": "2026-11-05",
+ "examTime": "09:00",
+ "start": "2026-10-27",
+ "minutesPerDay": 240,
+ "offWeekdays": [6],
+ "dayMinutes": {},
+ "milestones": [],
+ "sources": [
+  {"id": "videos", "type": "videos", "name": "Moodle videos", "defaultMin": 10, "minPerUnit": null,
+   "videos": [
+    {"id": "v1", "name": "Shoulder joint", "min": 5, "url": "https://moodle.example.edu/mod/lti/view.php?id=101"},
+    {"id": "v2", "name": "Elbow joint", "min": 6, "url": "https://moodle.example.edu/mod/lti/view.php?id=102"},
+    {"id": "v3", "name": "Muscles of the upper arm", "min": 6, "url": "https://moodle.example.edu/mod/lti/view.php?id=103"}
+   ]},
+  {"id": "joints", "type": "anki", "name": "Joints", "decks": ["Anatomy::Joints"], "minPerUnit": 1, "maxNew": 120},
+  {"id": "muscles", "type": "anki", "name": "Muscles", "decks": ["Anatomy::Muscles"], "minPerUnit": 1, "maxNew": 120},
+  {"id": "table", "type": "anki", "name": "Muscle table (review only)", "decks": ["Anatomy::Muscle table"],
+   "minPerUnit": 0.4, "reviewOnly": true}
+ ],
+ "topics": [
+  {"id": "k1", "name": "Joints: shoulder", "videos": {"videos": ["v1"]},
+   "anki": {"joints": "deck:\"Anatomy::Joints::Shoulder\""}},
+  {"id": "k2", "name": "Joints: elbow", "videos": {"videos": ["v2"]},
+   "anki": {"joints": "deck:\"Anatomy::Joints::Elbow\""}},
+  {"id": "k3", "name": "Muscles", "videos": {"videos": ["v3"]},
+   "anki": {"muscles": "deck:\"Anatomy::Muscles\""}}
+ ]
+}

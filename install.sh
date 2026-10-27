@@ -40,7 +40,7 @@ done
 if [ -n "$addon" ]; then
   echo "  ok       Smart Study Plan add-on  ($addon)"
 else
-  echo "  MISSING  Smart Study Plan add-on  (https://github.com/blackpaired/smart-study-plan)"; missing=1
+  echo "  MISSING  Smart Study Plan add-on  (https://github.com/TruckDrive/smart-study-plan)"; missing=1
 fi
 
 echo

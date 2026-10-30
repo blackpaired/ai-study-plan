@@ -1,6 +1,6 @@
 # AI Study Plan
 
-A skill for **terminal AI agents** (AI coding agents / agentic CLIs such as Claude Code, Codex CLI, Gemini CLI, OpenCode …) that turns your study materials into a **day-by-day study plan up to your exam** and writes it straight into the Anki add-on [**Smart Study Plan**](https://github.com/TruckDrive/smart-study-plan). You only say *what* you study, *when* the exam is and *how long* you want to study per day.
+A skill for **terminal AI agents** (AI coding agents / agentic CLIs such as Claude Code, Codex CLI, Gemini CLI, OpenCode …) that turns your study materials into a **day-by-day study plan up to your exam** and writes it straight into the Anki add-on [**Smart Study**](https://github.com/TruckDrive/smart-study). You only say *what* you study, *when* the exam is and *how long* you want to study per day.
 
 ## What you get
 
@@ -39,7 +39,7 @@ A skill for **terminal AI agents** (AI coding agents / agentic CLIs such as Clau
 
 - A terminal AI agent that can read files and run shell commands. Skill support is a plus, but not required.
 - Linux or macOS
-- [Anki](https://apps.ankiweb.net) 23.10+ with the [Smart Study Plan](https://github.com/TruckDrive/smart-study-plan) add-on
+- [Anki](https://apps.ankiweb.net) 23.10+ with the [Smart Study](https://github.com/TruckDrive/smart-study) add-on
 - Anki's Python library (`python3 -c "import anki"` must work; Linux packages ship it, otherwise `pip install anki`)
 - Python 3, [Node.js](https://nodejs.org) 22+ and Chromium or Chrome (for the Moodle login window)
 - [`markitdown`](https://github.com/microsoft/markitdown): `pipx install 'markitdown[all]'`, and `poppler` (`sudo pacman -S poppler` / `sudo apt install poppler-utils` / `brew install poppler`)
@@ -92,7 +92,7 @@ Plain language works too:
 - *"Add the Moodle videos to my anatomy plan"*
 - *"I missed two days, plan the rest again"*
 
-Then open **Tools → Study Plan…** in Anki.
+Then open **Tools → Smart Study → Study Plan** in Anki.
 
 ### The helper scripts on their own
 
@@ -107,7 +107,7 @@ node <skills-folder>/study-plan/moodle_links.mjs videos "<course-url>" --deep --
 
 ## Works well with
 
-- [smart-study-plan](https://github.com/TruckDrive/smart-study-plan): the Anki add-on this skill fills.
+- [smart-study](https://github.com/TruckDrive/smart-study): the Anki add-on this skill fills.
 - [ai-study-anki](https://github.com/blackpaired/ai-study-anki): turns your materials into Anki cards for the plan.
 - [ai-study-notes](https://github.com/blackpaired/ai-study-notes): study notes that explain the connections, exported as a PDF.
 - [ai-study-tutor](https://github.com/blackpaired/ai-study-tutor): teaches you the material step by step.

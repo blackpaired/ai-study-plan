@@ -1,11 +1,11 @@
 ---
 name: study-plan
-description: Turns lecture notes, Moodle videos and Anki decks into a day-by-day study plan up to the exam and writes it straight into the Anki add-on "Smart Study Plan" – pages, linked videos and new cards per day, fitted to the daily study time and the exam date. Reads videos from Moodle through a login window the user signs into (links only, no downloads), bundles chapters, videos and Anki subdecks into topics and lets the add-on schedule them. Can also extend an existing plan (e.g. add videos). Use when the user says "study plan", "exam plan", "exam prep", "plan this until my exam", "put this into my Anki", "add the videos to my plan", or invokes /study-plan.
+description: Turns lecture notes, Moodle videos and Anki decks into a day-by-day study plan up to the exam and writes it straight into the Anki add-on "Smart Study" – pages, linked videos and new cards per day, fitted to the daily study time and the exam date. Reads videos from Moodle through a login window the user signs into (links only, no downloads), bundles chapters, videos and Anki subdecks into topics and lets the add-on schedule them. Can also extend an existing plan (e.g. add videos). Use when the user says "study plan", "exam plan", "exam prep", "plan this until my exam", "put this into my Anki", "add the videos to my plan", or invokes /study-plan.
 ---
 
 # Study plan – from your materials to a finished plan in Anki
 
-The user is studying for an exam and uses **Anki** with the add-on **Smart Study Plan** (window via Tools → Study Plan… or the "Study Plan" link at the top of Anki). You build a plan that shows up there ready to use: every day with reviews, script pages, the videos of the day (as a clickable link) and new cards.
+The user is studying for an exam and uses **Anki** with the add-on **Smart Study** (window via Tools → Smart Study → Study Plan or the "Study Plan" link at the top of Anki). You build a plan that shows up there ready to use: every day with reviews, script pages, the videos of the day (as a clickable link) and new cards.
 Language: the language the user writes in, short and relaxed.
 Goal: the user only says **what** (files, Moodle course, decks), **until when** (exam) and **how long per day** – you do the rest.
 

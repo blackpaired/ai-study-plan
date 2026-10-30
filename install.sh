@@ -34,13 +34,14 @@ else
   echo "  MISSING  anki (Python library)  (ships with Anki 23.10+ on Linux packages, otherwise: pip install anki)"; missing=1
 fi
 addon=""
-for d in "$HOME/.local/share/Anki2/addons21"/* "$HOME/Library/Application Support/Anki2/addons21"/*; do
+for d in "$HOME/.local/share/Anki2/addons21"/* "$HOME/.local/share/Anki2/addons21"/*/plan \
+         "$HOME/Library/Application Support/Anki2/addons21"/* "$HOME/Library/Application Support/Anki2/addons21"/*/plan; do
   [ -f "$d/planner.py" ] && [ -f "$d/store.py" ] && addon="$d" && break
 done
 if [ -n "$addon" ]; then
-  echo "  ok       Smart Study Plan add-on  ($addon)"
+  echo "  ok       Smart Study add-on  ($addon)"
 else
-  echo "  MISSING  Smart Study Plan add-on  (https://github.com/TruckDrive/smart-study-plan)"; missing=1
+  echo "  MISSING  Smart Study add-on  (https://github.com/TruckDrive/smart-study)"; missing=1
 fi
 
 echo

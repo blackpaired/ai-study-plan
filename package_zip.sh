@@ -4,7 +4,7 @@
 # the full SKILL.md description stays in the repo.
 set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
-short="Builds a day-by-day study plan up to your exam from your notes, Moodle videos and Anki decks, and writes it into the Smart Study Plan Anki add-on. Use for study plan or exam prep."
+short="Builds a day-by-day study plan up to your exam from your notes, Moodle videos and Anki decks, and writes it into the Smart Study Anki add-on. Use for study plan or exam prep."
 [ ${#short} -le 200 ] || { echo "Short description is ${#short} characters (max 200)" >&2; exit 1; }
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT

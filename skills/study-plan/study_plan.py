@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Connects the skill to the Anki add-on "Smart Study Plan".
+"""Connects the skill to the Anki add-on "Smart Study".
 Reads Anki only from a COPY of the collection (Anki may stay open) and plans with the
 add-on's own planning code, so the plan looks exactly as if you had clicked
 "Create plan" in the add-on.
@@ -47,9 +47,10 @@ def addon_folder(choice=None):
     if choice:
         return os.path.expanduser(choice)
     for d in sorted(glob.glob(os.path.join(anki_dir(), "addons21", "*"))):
-        if os.path.isfile(os.path.join(d, "planner.py")) and os.path.isfile(os.path.join(d, "store.py")):
-            return d
-    fail("Add-on 'Smart Study Plan' not found (folder with planner.py in Anki2/addons21/). "
+        for folder in (d, os.path.join(d, "plan")):  # Smart Study keeps the planner in plan/
+            if os.path.isfile(os.path.join(folder, "planner.py")) and os.path.isfile(os.path.join(folder, "store.py")):
+                return folder
+    fail("Add-on 'Smart Study' not found (folder with planner.py in Anki2/addons21/). "
          "Pass it with --addon <folder>.", 3)
 
 
